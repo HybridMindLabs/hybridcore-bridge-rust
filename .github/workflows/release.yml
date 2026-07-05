@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package
+        run: |
+          mkdir -p dist
+          cp HybridCoreBridge.cs dist/
+          zip -j hybridcore-bridge-rust.zip HybridCoreBridge.cs README.md LICENSE
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            HybridCoreBridge.cs
+            hybridcore-bridge-rust.zip
+          generate_release_notes: true
