@@ -1,0 +1,6 @@
+{
+  "Site base URL (no trailing slash)": "https://your-community.com",
+  "Bridge token (hcb_...)": "none",
+  "Poll interval (seconds)": 5.0,
+  "Debug logging": false
+}

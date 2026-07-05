@@ -1,0 +1,12 @@
+# Oxide runtime (config is generated per-server)
+oxide/
+*.json.bak
+
+# Editor / OS
+.idea/
+.vscode/
+.vs/
+bin/
+obj/
+.DS_Store
+Thumbs.db
